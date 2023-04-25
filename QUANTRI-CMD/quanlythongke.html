@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Quản lý thống kê</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Main CSS-->
+  <link rel="stylesheet" type="text/css" href="/QUANTRI-CMD/css/stylethongke.css">
+ 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <!-- or -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!-- Font-icon css-->
+  <link rel="stylesheet" type="text/css"
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+      <!--===============================================================================================-->
+      <link rel="stylesheet" href="/QUANTRI-CMD/css/styleqlkhachhang.css">
+      <!-- Latest compiled and minified CSS -->
+      <!--===============================================================================================-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <!-- jQuery library -->
+      <!--===============================================================================================-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+      <!--===============================================================================================-->
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+      <!--===============================================================================================-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
+      <!--===============================================================================================-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.js"></script>
+      <!--===============================================================================================-->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round|Open+Sans">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <!--===============================================================================================-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body onload="time()" class="app sidebar-mini rtl">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#"><i class="fa fa-user-circle" aria-hidden="true"></i>   QUẢN TRỊ CMD MOBILE</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li  class="active"><a href="#home"  >THỐNG KÊ</a></li>
+                    <li><a href="/QUANTRI-CMD/quanlykhachhang.html" >QUẢN LÝ KHÁCH HÀNG</a></li>
+                    <li><a href="/QUANTRI-CMD/quanlysanpham.html" >QUẢN LÝ SẢN PHẨM</a></li>
+                    <li><a href="/QUANTRI-CMD/quanlydonhang.html"  >QUẢN LÝ ĐƠN HÀNG</a></li>
+                        
+                    <li>
+                        <a href="#"  ><b>TÀI KHOẢN</b>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown">
+                            <li><a href="/html/trangchu.html"  ><b>ĐĂNG XUẤT <i class="fas fa-sign-out-alt"></i></b></a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <main class="app-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="app-title">
+          <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><a href="#"><u><font size = "+0,5">Doanh thu</font></u></a></li>
+          </ul>
+          <div id="clock"></div>
+        </div>
+      </div>
+    </div>
+        <div class="row">
+             <div class="col-md-6 col-lg-3">
+                <div class="widget-small primary coloured-icon"><i class='icon  bx bxs-user fa-3x'></i>
+                    <div class="info">
+                        <h4>Tổng khách hàng</h4>
+                        <p><b>26 khách hàng</b></p>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small info coloured-icon"><i class='icon bx bxs-purchase-tag-alt fa-3x' ></i>
+                    <div class="info">
+                        <h4>Tổng sản phẩm</h4>
+                        <p><b>8580 sản phẩm</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small warning coloured-icon"><i class='icon fa-3x bx bxs-shopping-bag-alt'></i>
+                    <div class="info">
+                        <h4>Tổng đơn hàng</h4>
+                        <p><b>457 đơn hàng</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small danger coloured-icon"><i class='icon fa-3x bx bxs-info-circle' ></i>
+                    <div class="info">
+                        <h4>Hàng đang giao</h4>
+                        <p><b>78 sản phẩm</b></p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small primary coloured-icon"><i class='icon fa-3x bx bxs-chart' ></i>
+                    <div class="info">
+                        <h4>Tổng lợi nhuận</h4>
+                        <p><b>104.890.000 đ</b></p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-6 col-lg-3">
+                <div class="widget-small info coloured-icon"><i class='icon fa-3x bx bxs-user-badge' ></i>
+                    <div class="info">
+                        <h4>Khách hàng mới</h4>
+                        <p><b>3 khách hàng</b></p>
+                    </div>
+                </div>
+            </div> 
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small warning coloured-icon"><i class='icon fa-3x bx bxs-tag-x' ></i>
+                    <div class="info">
+                        <h4>Hết hàng</h4>
+                        <p><b>1 sản phẩm</b></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-small danger coloured-icon"><i class='icon fa-3x bx bxs-receipt' ></i>
+                    <div class="info">
+                        <h4>Đơn hàng hủy</h4>
+                        <p><b>2 đơn hàng</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <div>
+                        <h3 class="tile-title">SẢN PHẨM BÁN CHẠY</h3>
+                    </div>
+                    <div class="tile-body">
+                        <table class="table table-hover table-bordered" id="sampleTable">
+                            <thead>
+                                <tr>
+                                    <th>Mã sản phẩm</th>
+                                    <th>Tên sản phẩm</th>
+                                    <th>Giá tiền</th>
+                                    <th>Danh mục</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>71309005</td>
+                                    <td>iPhone 13 Pro Max 128GB</td>
+                                    <td>5.600.000 đ</td>
+                                    <td>Điện thoại</td>
+                                </tr>
+                                <tr>
+                                    <td>62304003</td>
+                                    <td>Sạc nhanh 20W Apple MHJE3ZA</td>
+                                    <td>33.235.000 đ</td>
+                                    <td>Phụ kiện</td>
+                                </tr>
+                                <tr>
+                                    <td>72109004</td>
+                                    <td>Cáp Mophie Usb-C To Lightning MFI 1M</td>
+                                    <td>3.800.000 đ</td>
+                                    <td>Phụ kiện</td>
+                                </tr>
+                                <tr>
+                                    <td>83826226</td>
+                                    <td>Smart Tivi 4K The Serif Samsung 55 inch QA55LS01TA</td>
+                                    <td>2.450.000 đ</td>
+                                    <td>Tivi</td>
+                                </tr>
+                                <tr>
+                                    <td>71304041</td>
+                                    <td>Quạt thông minh Mi Smart Standing Fan 2 Lite</td>
+                                    <td>21.550.000 đ</td>
+                                    <td>Smart Home</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-md-12">
+                    <div class="tile">
+                        <div>
+                            <h3 class="tile-title">TỔNG ĐƠN HÀNG</h3>
+                        </div>
+                        <div class="tile-body">
+                            <table class="table table-hover table-bordered" id="sampleTable">
+                                <thead>
+                                    <tr>
+                                            <th>ID đơn hàng</th>
+                                            <th>Khách hàng</th>
+                                            <th>Đơn hàng</th>
+                                            <th>Số lượng</th>
+                                            <th>Tổng tiền</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                            <td>MD0837</td>
+                                            <td>Triệu Thanh Phú</td>
+                                            <td>Quạt thông minh Mi Smart Standing Fan 2 Lite</td>
+                                            <td>2 sản phẩm</td>
+                                            <td>9.400.000 đ</td>
+                                    </tr>
+                                    <tr>
+                                            <td>MĐ8265</td>
+                                            <td>Nguyễn Thị Ngọc Cẩm</td>
+                                            <td>Đồng hồ thông minh Huawei Watch GT3 dây da</td>
+                                            <td>1 sản phẩm</td>
+                                            <td>3.800.000 đ</td>   
+                                    </tr>
+                                    <tr>
+                                            <td>MT9835</td>
+                                            <td>Đặng Hoàng Phúc</td>
+                                            <td>Tai nghe Bluetooth Apple AirPods 3</td>
+                                            <td>3 sản phẩm</td>
+                                            <td>40.650.000 đ</td>
+                                    </tr>
+                                    <tr>
+                                            <td>ER3835</td>
+                                            <td>Nguyễn Thị Mỹ Yến</td>
+                                            <td>Hộp đựng tai nghe AirPods 3 Benks Suitcase Protective TPU</td>
+                                            <td>1 sản phẩm</td>
+                                            <td>16.770.000 đ</td>
+                                    </tr>
+                                    <tr>
+                                            <td>AL3947</td>
+                                            <td>Phạm Thị Ngọc</td>
+                                            <td>Laptop HP 14-CF2033WM 3V7G4UA</td>
+                                            <td>2 sản phẩm</td>
+                                            <td>19.770.000 đ</td>
+                                    </tr>
+                                    <tr>
+                                            <td>QY8723</td>
+                                            <td>Ngô Thái An</td>
+                                            <td>Ốp lưng Likgus trong suốt viền màu cho iPhone 11 Pro Max</td>
+                                            <td>1 sản phẩm</td>
+                                            <td>14.500.000 đ</td>
+                                    </tr>
+                                    <tr>
+                                       <th colspan="4">Tổng cộng:</th>
+                                        <td>104.890.000 đ</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+                <div class="col-md-12">
+                    <div class="tile">
+                        <div>
+                            <h3 class="tile-title">SẢN PHẨM ĐÃ HẾT</h3>
+                        </div>
+                        <div class="tile-body">
+                            <table class="table table-hover table-bordered" id="sampleTable">
+                                <thead>
+                                    <tr>
+                                            <th>Mã sản phẩm</th>
+                                            <th>Tên sản phẩm</th>
+                                            <th>Ảnh</th>
+                                            <th>Số lượng</th>
+                                            <th>Tình trạng</th>
+                                            <th>Giá tiền</th>
+                                            <th>Danh mục</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                            <td>83826226</td>
+                                            <td>Laptop HP 14-CF2033WM 3V7G4UA</td>
+                                            <td><img src="https://cdn2.cellphones.com.vn/358x/media/catalog/product/5/c/5cb9252e618c4537be38b0b8ea227d29-2.jpg" alt="" width="100px;"></td>
+                                            <td>0</td>
+                                            <td><span class="badge bg-danger">Hết hàng</span></td>
+                                            <td>2.450.000 đ</td>
+                                            <td>Laptop</td>
+                                    </tr>
+                                    <tr>
+                                        <td>83826226</td>
+                                        <td>Miếng dán cường lực cho iPhone 12 / 12 Pro MiPow Kingbull HD Premium</td>
+                                        <td><img src="https://cdn2.cellphones.com.vn/358x/media/catalog/product/d/a/dan-cuong-luc-full-iphone-12-mipow-kingbull-premiu4384_1_2.png" alt="" width="100px;"></td>
+                                        <td>10</td>
+                                        <td><span class="badge bg-danger">Còn hàng</span></td>
+                                        <td>2.450.000 đ</td>
+                                        <td>Laptop</td>
+                                </tr>
+                                <tr>
+                                    <td>83826226</td>
+                                    <td>Dán cường lực Camera iPhone 13 Pro/13 Pro Max Mipow viền màu</td>
+                                    <td><img src="https://cdn2.cellphones.com.vn/358x/media/catalog/product/m/i/mieng-dan-camera-iphone-13-pro-mipow-vien-mau-1_1.png" alt="" width="100px;"></td>
+                                    <td>0</td>
+                                    <td><span class="badge bg-danger">Hết hàng</span></td>
+                                    <td>2.450.000 đ</td>
+                                    <td>Laptop</td>
+                            </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <div>
+                        <h3 class="tile-title">KHÁCH HÀNG MỚI</h3>
+                    </div>
+                    <div class="tile-body">
+                        <table class="table table-hover table-bordered" id="sampleTable">
+                            <thead>
+                                <tr>
+                                    <th>Họ và tên</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Ngày sinh</th>
+                                    <th>Giới tính</th>
+                                    <th>SĐT</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Hồ Thị Thanh Ngân</td>
+                                    <td>155-157 Trần Quốc Thảo, Quận 3, Hồ Chí Minh </td>
+                                    <td>12/02/1999</td>
+                                    <td>Nữ</td>
+                                    <td>0926737168</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Trần Khả Ái</td>
+                                    <td>6 Nguyễn Lương Bằng, Tân Phú, Quận 7, Hồ Chí Minh</td>
+                                    <td>22/12/1999</td>
+                                    <td>Nữ</td>
+                                    <td>0931342432</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>Nguyễn Đặng Trọng Nhân</td>
+                                    <td>59C Nguyễn Đình Chiểu, Quận 3, Hồ Chí Minh </td>
+                                    <td>23/07/1996</td>
+                                    <td>Nam</td>
+                                    <td>0846881155</td>
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="tile">
+                    <h3 class="tile-title">DỮ LIỆU HÀNG THÁNG</h3>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="tile">
+                    <h3 class="tile-title">THỐNG KÊ DOANH SỐ</h3>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <canvas class="embed-responsive-item" id="barChartDemo"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+   
+    <!-- Page specific javascripts-->
+    <script type="text/javascript" src="/QUANTRI-CMD/js/chart.js"></script>
+    <script type="text/javascript">
+    var data = {
+      labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng 6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+      datasets: [{
+          label: "Dữ liệu đầu tiên",
+          fillColor: "rgba(255, 255, 255, 0.158)",
+          strokeColor: "black",
+          pointColor: "rgb(220, 64, 59)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "green",
+          data: [20, 59, 90, 51, 56, 100, 40, 60, 78, 53, 33, 81]
+        },
+        {
+          label: "Dữ liệu kế tiếp",
+          fillColor: "rgba(255, 255, 255, 0.158)",
+          strokeColor: "rgb(220, 64, 59)",
+          pointColor: "black",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "green",
+          data: [48, 48, 49, 39, 86, 10, 50, 70, 60, 70, 75, 90]
+        }
+      ]
+    };
+
+
+        var ctxl = $("#lineChartDemo").get(0).getContext("2d");
+        var lineChart = new Chart(ctxl).Line(data);
+
+        var ctxb = $("#barChartDemo").get(0).getContext("2d");
+        var barChart = new Chart(ctxb).Bar(data);
+    </script>
+  
+    </script>
+</body>
+
+</html>
